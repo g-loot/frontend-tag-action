@@ -33,7 +33,7 @@ else
   LATEST_BETA_ID="$(echo "${LATEST_BETA_RELEASE}" | awk -v l=$((INDEX + 1)) '{ string=substr($0, l); print string; }')"
 
   NEXT_BETA_ID=$([ "${LATEST_PROD_MINOR}" == "${LATEST_BETA_MINOR}" ] && echo $((LATEST_BETA_ID + 1)) || echo 1)
-  NEXT_RELEASE=${CURRENT_YEAR_MONTH}.${LATEST_PROD_MINOR:-1}-${NEXT_BETA_ID}
+  NEXT_RELEASE=${CURRENT_YEAR_MONTH}.${LATEST_PROD_MINOR:-1}-${NEXT_BETA_ID:-1}
 fi
 
 JSON_STRING=$(jq -n \
