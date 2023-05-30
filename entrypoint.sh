@@ -37,7 +37,7 @@ else
 fi
 
 JSON_STRING=$(jq -n \
-  --arg tn "$NEXT_RELEASE" \
+  --arg tn "v$NEXT_RELEASE" \
   --arg tc "$BRANCH" \
   '{tag_name: $tn, target_commitish: $tc}')
 echo "${JSON_STRING}"
