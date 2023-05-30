@@ -47,6 +47,8 @@ jobs:
         with:
           branch: ${{ github.ref }}
           production: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Display Tag
         run: echo "The newly created tag is ${{ steps.tag_frontend.outputs.tag }}"
