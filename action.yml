@@ -1,0 +1,26 @@
+name: "Frontend Tag Action"
+description: "Create a tag for the frontend project"
+author: "Stryda"
+
+branding:
+  icon: "tag"
+  color: "green"
+
+inputs:
+  branch:
+    description: "Branch to tag"
+    required: true
+  production:
+    description: "Production"
+    required: true
+
+outputs:
+  tag:
+    description: "The newly created tag"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.branch }}
+    - ${{ inputs.production }}
