@@ -43,7 +43,7 @@ jobs:
 
       - name: Tag Frontend
         id: tag_frontend
-        uses: stryda/frontend-tag-action@v1
+        uses: stryda/frontend-tag-action@master
         with:
           branch: ${{ github.ref }}
           production: true
